@@ -60,7 +60,7 @@ const increaseCounter = () => {
 }
 
 const decreaseCounter = () => {
-  data.counter--
+  if(data.counter > 0 ) data.counter--
 }
 
 
