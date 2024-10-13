@@ -3,6 +3,7 @@
     
     <q-img
       src="background.jpg"
+      class="fit absolute"
     />
 
     <q-page-container>
