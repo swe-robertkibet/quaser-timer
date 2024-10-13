@@ -35,7 +35,7 @@ To set up the Counter App locally, follow these steps:
 4. **Run the application**:
 
    ```bash
-   npm run serve
+   quasar dev
    ```
 
 5. **Open your browser** and go to `http://localhost:8080` to view the app.
