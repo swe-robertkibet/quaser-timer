@@ -11,12 +11,14 @@
     <div class="row full-width items-center">
       <div class="col text-center">
         <q-btn round 
+        @click="decreaseCounter"
         size="xl"
         icon="remove" />
       </div>
       <div class="col text-center text-h2">{{ data.counter }}</div>
       <div class="col text-center">
         <q-btn round 
+        @click="increaseCounter"
         size="xl"
         icon="add" />
       </div>
@@ -50,4 +52,18 @@ const data = reactive({
   counter: 0,
   name: ''
 })
+
+// Counter Methods
+
+const increaseCounter = () => {
+  data.counter++
+}
+
+const decreaseCounter = () => {
+  data.counter--
+}
+
+
+
+
 </script>
