@@ -26,6 +26,7 @@
     </div>
     <div class="row">
         <q-btn round 
+        @click="resetCounter"
         size="xl"
         icon="restart_alt" />
     </div>
@@ -63,6 +64,9 @@ const decreaseCounter = () => {
   if(data.counter > 0 ) data.counter--
 }
 
+const resetCounter = () => {
+  if(data.counter > 0 ) data.counter=0
+}
 
 
 
