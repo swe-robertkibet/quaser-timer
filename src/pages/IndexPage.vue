@@ -16,7 +16,8 @@
           round
           size="xl"
           icon="remove" 
-          v-touch-repeat:300:300="decreaseCounter" />
+          @click="decreaseCounter"
+          v-touch-repeat:300:300:300:300:50="decreaseCounter" />
       </div>
       <div class="col text-center text-h2">{{ data.counter }}</div>
       <div class="col text-center">
@@ -24,7 +25,8 @@
           round
           size="xl"
           icon="add"
-          v-touch-repeat:300:300="increaseCounter" />
+          @click="increaseCounter"
+          v-touch-repeat:300:300:300:300:50="increaseCounter" />
       </div>
     </div>
     <div class="row">
@@ -45,17 +47,17 @@
 </style>
 
 <script setup lang="ts">
+import { watch, reactive } from 'vue';
 
-// Imports
-import { reactive } from 'vue'
-
-// Data
 const data = reactive({
   counter: 0,
   name: ''
 })
 
-// Counter Methods
+watch(() => data.counter, (newValue) => {
+  console.log('Counter changed:', newValue)
+})
+
 const increaseCounter = () => {
   data.counter++
 }
@@ -65,13 +67,14 @@ const decreaseCounter = () => {
 }
 
 const resetCounter = () => {
-  if (data.counter > 0) data.counter = 0
+  data.counter = 0
 }
 
-// Touch pan handler
-const handlePan = e => {
-  if(e.delta.y < 0) increaseCounter()
-  else decreaseCounter()
+const handlePan = (e: { delta: { y: number } }) => {
+  if (e.delta.y < 0) {
+    increaseCounter()
+  } else {
+    decreaseCounter()
+  }
 }
-
 </script>
