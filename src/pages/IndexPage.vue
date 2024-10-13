@@ -1,5 +1,12 @@
 <template>
   <q-page class="row items-center justify-evenly text-white">
+    <div class="row" >
+      <q-input
+      input-class="text-center text-h5 text-white" 
+      color="teal"
+      filled 
+      placeholder="Counter" />
+    </div>
     <div class="row full-width items-center">
       <div class="col text-center">
         <q-btn round 
@@ -13,6 +20,11 @@
         icon="add" />
       </div>
 
+    </div>
+    <div class="row">
+        <q-btn round 
+        size="xl"
+        icon="restart_alt" />
     </div>
   </q-page>
 </template>
