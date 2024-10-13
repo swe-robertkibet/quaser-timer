@@ -56,7 +56,7 @@ To set up the Counter App locally, follow these steps:
 
 ## Screenshot
 
-![Counter App Screenshot](image.PNG)
+![Counter App Screenshot](image.png)
 
 ## License
 
