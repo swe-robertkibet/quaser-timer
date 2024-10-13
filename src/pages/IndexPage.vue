@@ -1,31 +1,33 @@
 <template>
   <q-page class="row items-center justify-evenly text-white">
-    <div class="row" >
+    <div class="row">
       <q-input
-      v-model="data.name"
-      input-class="text-center text-h5 text-white" 
-      color="teal"
-      filled 
-      placeholder="Counter" />
+        v-model="data.name"
+        input-class="text-center text-h5 text-white"
+        color="teal"
+        filled
+        placeholder="Counter" />
     </div>
     <div class="row full-width items-center">
       <div class="col text-center">
-        <q-btn round 
-        @click="decreaseCounter"
-        size="xl"
-        icon="remove" />
+        <q-btn
+          round
+          size="xl"
+          icon="remove" 
+          v-touch-repeat:300:300:300:300:50.mouse="decreaseCounter" />
       </div>
       <div class="col text-center text-h2">{{ data.counter }}</div>
       <div class="col text-center">
-        <q-btn round 
-        @click="increaseCounter"
-        size="xl"
-        icon="add" />
+        <q-btn
+          round
+          size="xl"
+          icon="add"
+          v-touch-repeat:300:300:300:300:50.mouse="increaseCounter" />
       </div>
-
     </div>
     <div class="row">
-        <q-btn round 
+      <q-btn
+        round
         @click="resetCounter"
         size="xl"
         icon="restart_alt" />
@@ -40,10 +42,7 @@
 }
 </style>
 
-
-
 <script setup lang="ts">
-
 
 // Imports
 import { reactive } from 'vue'
@@ -55,19 +54,16 @@ const data = reactive({
 })
 
 // Counter Methods
-
 const increaseCounter = () => {
   data.counter++
 }
 
 const decreaseCounter = () => {
-  if(data.counter > 0 ) data.counter--
+  if (data.counter > 0) data.counter--
 }
 
 const resetCounter = () => {
-  if(data.counter > 0 ) data.counter=0
+  if (data.counter > 0) data.counter = 0
 }
-
-
 
 </script>
