@@ -2,6 +2,7 @@
   <q-page class="row items-center justify-evenly text-white">
     <div class="row" >
       <q-input
+      v-model="data.name"
       input-class="text-center text-h5 text-white" 
       color="teal"
       filled 
@@ -13,7 +14,7 @@
         size="xl"
         icon="remove" />
       </div>
-      <div class="col text-center text-h2">23</div>
+      <div class="col text-center text-h2">{{ data.counter }}</div>
       <div class="col text-center">
         <q-btn round 
         size="xl"
@@ -40,4 +41,13 @@
 
 <script setup lang="ts">
 
+
+// Imports
+import { reactive } from 'vue'
+
+// Data
+const data = reactive({
+  counter: 0,
+  name: ''
+})
 </script>
